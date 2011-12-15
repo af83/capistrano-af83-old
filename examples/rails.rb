@@ -7,7 +7,7 @@ set :user,    "please_fill_me"
 set :appname, "please_fill_me"
 
 require "capistrano/af83"
-load "capistrano/af83/info"
+load "af83/info"
 # TODO run `cap dev info` and check if variables are OK
 
 # Use the capistrano rules for precompiling assets with the Rails assets
@@ -16,15 +16,15 @@ set :public_children, %w(images)
 load "deploy/assets"
 
 # TODO choose if you want to use thin or unicorn
-load "capistrano/af83/thin"
-# load "capistrano/af83/unicorn"
+load "af83/thin"
+# load "af83/unicorn"
 
 # TODO uncomment the extensions you want to use
-# load "capistrano/af83/custom_maintenance_page"
-# load "capistrano/af83/es"
-# load "capistrano/af83/mongoid"
-# load "capistrano/af83/resque"
-# load "capistrano/af83/js_routes"
+# load "af83/custom_maintenance_page"
+# load "af83/es"
+# load "af83/mongoid"
+# load "af83/resque"
+# load "af83/js_routes"
 
 # IRC notification
 notification.irc do |irc|
