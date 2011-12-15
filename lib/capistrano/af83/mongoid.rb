@@ -8,7 +8,7 @@ namespace :mongoid do
 
   desc "Link the mongoid config in the release_path"
   task :symlink do
-    run "ln -s #{shared_path}/mongoid.yml #{release_path}/config/mongoid.yml", :once => true
+    run "test -f #{release_path}/config/mongoid.yml || ln -s #{shared_path}/mongoid.yml #{release_path}/config/mongoid.yml", :once => true
   end
 
   desc "Create MongoDB indexes"
