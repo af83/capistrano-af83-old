@@ -21,3 +21,7 @@ after "deploy:update", "deploy:cleanup"
 # TODO move this somewhere else
 depend :remote, :command, "bundle"
 set :bundle_cmd,    "bundle"
+
+# It's not a good idea to keep capistrano's default value for this when using
+# the assets pipeline of Rails3.
+set :public_children, %w(images)
