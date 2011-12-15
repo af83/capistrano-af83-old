@@ -67,4 +67,5 @@ Credits
 -------
 
 Copyright (c) 2011 af83
+
 Released under the MIT license

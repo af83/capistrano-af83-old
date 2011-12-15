@@ -17,6 +17,6 @@ namespace :mongoid do
   end
 end
 
-after "deploy:finalize_update", "mongoid:copy"
-after "deploy:finalize_update", "mongoid:symlink"
-after "deploy:update_code", "mongoid:index"
+after "deploy:update_code", "mongoid:copy"
+after "deploy:update_code", "mongoid:symlink"
+after "deploy:update", "mongoid:index"

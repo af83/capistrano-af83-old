@@ -16,7 +16,7 @@ set (:deploy_to)   { "/var/www/#{user}/#{rails_env}" }
 # I don't know why capistrano don't do the cleanup by default,
 # but it should be the case.
 set :keep_releases, 5
-after  "deploy:symlink", "deploy:cleanup"
+after "deploy:update", "deploy:cleanup"
 
 # TODO move this somewhere else
 depend :remote, :command, "bundle"

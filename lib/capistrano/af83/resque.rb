@@ -17,4 +17,4 @@ namespace :resque do
   end
 end
 
-after 'deploy:update_code', 'resque:restart'
+after 'deploy:update', 'resque:restart'

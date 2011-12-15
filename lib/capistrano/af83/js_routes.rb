@@ -7,4 +7,4 @@ namespace :js do
   end
 end
 
-after "deploy:update_code", "js:create_routes"
+after "deploy:update", "js:create_routes"
