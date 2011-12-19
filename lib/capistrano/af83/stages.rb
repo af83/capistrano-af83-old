@@ -14,6 +14,7 @@ task :dev do
   set :branch,    :master
   set :rails_env, :dev
   set(:default_environment) { { "RAILS_ENV" => rails_env } }
+  server "#{user}@#{application}", :app, :web, :db, :primary => true
   load "#{location}/#{stage}" if File.exists?("#{location}/#{stage}.rb")
 end
 
@@ -23,6 +24,7 @@ task :staging do
   set :branch,    :master
   set :rails_env, :staging
   set(:default_environment) { { "RAILS_ENV" => rails_env } }
+  server "#{user}@#{application}", :app, :web, :db, :primary => true
   load "#{location}/#{stage}" if File.exists?("#{location}/#{stage}.rb")
 end
 
@@ -32,7 +34,7 @@ task :prod do
   set :branch,    :production
   set :rails_env, :production
   set(:default_environment) { { "RAILS_ENV" => rails_env } }
-  load "#{location}/#{stage}" if File.exists?("#{location}/#{stage}.rb")
+  load "#{location}/#{stage}"
 end
 
 stages.each do |name|
