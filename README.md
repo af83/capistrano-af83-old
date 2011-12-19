@@ -37,8 +37,6 @@ Capistrano extensions
 
 We use some capistrano extensions (capistrano-af83 depends on them):
 
-- [**multistage**](https://github.com/TechnoGate/capistrano-exts):
-  have a configuration per environment
 - [**capistrano_colors**](https://github.com/stjernstrom/capistrano_colors/):
   colorize your capistrano output for better overview
 - [**capistrano-notification**](https://github.com/ursm/capistrano-notification):

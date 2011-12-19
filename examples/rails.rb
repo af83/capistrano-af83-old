@@ -14,6 +14,8 @@ load "af83/info"
 # pipeline on deploys.
 set :public_children, %w(images)
 load "deploy/assets"
+# OR you can choose our improved version of this task:
+# load "af83/deploy/assets"
 
 # TODO choose if you want to use thin or unicorn
 load "af83/thin"

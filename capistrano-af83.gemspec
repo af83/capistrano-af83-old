@@ -17,7 +17,6 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
 
   s.add_dependency "capistrano", "~>2.9"
-  s.add_dependency "capistrano-ext", "~>1.2"
   s.add_dependency "capistrano_colors", "~>0.5"
   s.add_dependency "capistrano-notification", "~>0.1"
   s.add_dependency "sushi", "~>0.0.2"

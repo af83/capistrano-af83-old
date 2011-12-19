@@ -1,6 +1,5 @@
 # Use a custom maintenance page
-
-# TODO explain how to use it
+# See http://ariejan.net/2011/09/19/capistrano-and-the-custom-maintenance-page
 
 namespace :deploy do
   namespace :web do

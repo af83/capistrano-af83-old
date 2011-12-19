@@ -1,5 +1,7 @@
 # Use unicorn for deployment
 
+depend :remote, :command, "bundle"
+
 namespace :deploy do
   task :start, :roles => :app do
     run "cd #{current_path} && #{bundle_cmd} exec unicorn -c config/unicorn.rb -E #{rails_env} -D"

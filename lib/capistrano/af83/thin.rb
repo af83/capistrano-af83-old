@@ -1,5 +1,7 @@
 # Use thin for deployment
 
+depend :remote, :command, "bundle"
+
 namespace :deploy do
   task :start, :roles => :app do
     run "cd #{current_path} && #{bundle_cmd} exec thin start -C #{shared_path}/thin.yml"

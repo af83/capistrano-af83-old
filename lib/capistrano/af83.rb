@@ -5,6 +5,6 @@ require "capistrano"
 if Capistrano::Configuration.instance
   Capistrano::Configuration.instance.load_paths << File.dirname(__FILE__)
   Capistrano::Configuration.instance.load "af83/default"
-  Capistrano::Configuration.instance.load "af83/environments"
+  Capistrano::Configuration.instance.load "af83/stages"
   require "capistrano/af83/extensions"
 end
