@@ -7,6 +7,7 @@ location = fetch(:stage_dir, "config/deploy")
 unless exists?(:stages)
   set :stages, Dir["#{location}/*.rb"].map { |f| File.basename(f, ".rb") }
 end
+set :stages, stages.map(&:to_sym)
 
 desc "Set the target stage to `dev'."
 task :dev do
@@ -37,13 +38,11 @@ task :prod do
   load "#{location}/#{stage}"
 end
 
-stages.each do |name|
-  unless default_stages.include?(name.to_sym)
-    desc "Set the target stage to `#{name}'."
-    task(name) do
-      set :stage, name.to_sym
-      load "#{location}/#{stage}"
-    end
+(stages - default_stages).each do |name|
+  desc "Set the target stage to `#{name}'."
+  task(name) do
+    set :stage, name
+    load "#{location}/#{stage}"
   end
 end
 
