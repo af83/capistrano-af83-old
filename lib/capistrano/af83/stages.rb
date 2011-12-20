@@ -38,10 +38,12 @@ task :prod do
 end
 
 stages.each do |name|
-  desc "Set the target stage to `#{name}'."
-  task(name) do
-    set :stage, name.to_sym
-    load "#{location}/#{stage}"
+  unless default_stages.include?(name.to_sym)
+    desc "Set the target stage to `#{name}'."
+    task(name) do
+      set :stage, name.to_sym
+      load "#{location}/#{stage}"
+    end
   end
 end
 
@@ -55,4 +57,4 @@ namespace :multistage do
   end
 end
 
-on :start, "multistage:ensure"
+on :start, "multistage:ensure", except: default_stages + stages
