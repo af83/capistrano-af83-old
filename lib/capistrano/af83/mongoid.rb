@@ -3,12 +3,12 @@
 namespace :mongoid do
   desc "Copy mongoid config"
   task :copy do
-    upload "config/mongoid/#{rails_env}.yml", "#{shared_path}/mongoid.yml", :via => :scp, :once => true
+    upload "config/mongoid/#{rails_env}.yml", "#{shared_path}/mongoid.yml", :via => :scp
   end
 
   desc "Link the mongoid config in the release_path"
   task :symlink do
-    run "test -f #{release_path}/config/mongoid.yml || ln -s #{shared_path}/mongoid.yml #{release_path}/config/mongoid.yml", :once => true
+    run "test -f #{release_path}/config/mongoid.yml || ln -s #{shared_path}/mongoid.yml #{release_path}/config/mongoid.yml"
   end
 
   desc "Create MongoDB indexes"
