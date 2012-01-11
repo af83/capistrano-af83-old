@@ -15,8 +15,8 @@ task :dev do
   set :branch,    :master
   set :rails_env, :dev
   set(:default_environment) { { "RAILS_ENV" => rails_env } }
-  server "#{user}@#{application}", :app, :web, :db, :primary => true
   load "#{location}/#{stage}" if File.exists?("#{location}/#{stage}.rb")
+  server "#{user}@#{application}", :app, :web, :db, :primary => true
 end
 
 desc "Set the target stage to `staging'."
@@ -25,8 +25,8 @@ task :staging do
   set :branch,    :master
   set :rails_env, :staging
   set(:default_environment) { { "RAILS_ENV" => rails_env } }
-  server "#{user}@#{application}", :app, :web, :db, :primary => true
   load "#{location}/#{stage}" if File.exists?("#{location}/#{stage}.rb")
+  server "#{user}@#{application}", :app, :web, :db, :primary => true
 end
 
 desc "Set the target stage to `prod'."
