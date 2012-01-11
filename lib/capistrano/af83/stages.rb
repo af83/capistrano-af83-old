@@ -56,4 +56,4 @@ namespace :multistage do
   end
 end
 
-on :start, "multistage:ensure", except: default_stages + stages
+on :start, "multistage:ensure", :except => default_stages + stages
