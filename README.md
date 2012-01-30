@@ -19,7 +19,7 @@ group :development do
 end
 ```
 
-Then use of one the
+Then run `capify .`, use of one the
 [examples](https://github.com/af83/capistrano-af83/blob/master/examples) of
 `config/deploy.rb` files and follow the comments for configuration.
 
