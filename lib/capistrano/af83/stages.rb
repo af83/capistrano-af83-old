@@ -35,7 +35,7 @@ task :prod do
   set :branch,    :production
   set :rails_env, :production
   set(:default_environment) { { "RAILS_ENV" => rails_env } }
-  load "#{location}/#{stage}" if File.exists?("#{location}/#{stage}.rb")
+  load "#{location}/#{stage}"
 end
 
 (stages - default_stages).each do |name|
