@@ -3,6 +3,7 @@
 
 namespace :deploy do
   namespace :web do
+    desc "Web disable"
     task :disable, :roles => :web, :except => { :no_release => true } do
       on_rollback { run "rm #{shared_path}/system/maintenance.html" }
       require 'erb'

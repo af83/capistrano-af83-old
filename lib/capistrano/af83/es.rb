@@ -6,6 +6,7 @@ namespace :es do
     run "cd #{release_path} && #{bundle_cmd} exec rake es:soft_start", :once => true
   end
 
+  desc "Restart Elastic Search if needed"
   task :restart do
     run "cd #{release_path} && #{bundle_cmd} exec rake es:running_restart", :once => true
   end
