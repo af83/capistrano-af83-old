@@ -25,6 +25,7 @@ load "af83/thin"
 # load "af83/custom_maintenance_page"
 # load "af83/es"
 # load "af83/mongoid"
+# load "af83/database"
 # load "af83/resque"
 # load "af83/js_routes"
 
