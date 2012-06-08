@@ -1,6 +1,16 @@
 # Use the config/database/#{rails_env}.yml file for database config
 
 namespace :database do
+  desc "Database create"
+  task :create do
+    run "cd #{current_path} && #{bundle_cmd} exec rake db:create:all"
+  end
+
+  desc "Database seeds population"
+  task :seed do
+    run "cd #{current_path} && #{bundle_cmd} exec rake db:seed"
+  end
+
   desc "Copy database config"
   task :copy do
     upload "config/database/#{rails_env}.yml", "#{shared_path}/database.yml", :via => :scp
