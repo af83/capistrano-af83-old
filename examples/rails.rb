@@ -2,6 +2,10 @@
 
 # This is an example of `config/deploy.rb` file for a Rails3 project.
 
+# Uncomment for disable colors
+# see https://github.com/capistrano/capistrano/wiki/Formatting-Logs
+#disable_log_formatters
+
 # TODO Fill these two variables
 set :user,    "please_fill_me"
 set :appname, "please_fill_me"
