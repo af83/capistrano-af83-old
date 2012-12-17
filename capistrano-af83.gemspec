@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "capistrano", "~>2.13.5"
   s.add_dependency "capistrano-notification", "~>0.1"
+  s.add_dependency "capistrano-maintenance", "~>0.0.2"
   s.add_dependency "shout-bot", "0.0.4"
   s.add_dependency "sushi", "~>0.0.2"
 end
