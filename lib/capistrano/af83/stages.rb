@@ -22,7 +22,7 @@ end
 desc "Set the target stage to `staging'."
 task :staging do
   set :stage,     :staging
-  set :branch,    :master
+  set :branch,    :staging
   set :rails_env, :staging
   set(:default_environment) { { "RAILS_ENV" => rails_env } }
   load "#{location}/#{stage}" if File.exists?("#{location}/#{stage}.rb")
