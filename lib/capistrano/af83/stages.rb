@@ -2,7 +2,8 @@
 
 # By default, we have 3 stages (dev, staging and production)
 # and we detect other stages if they have a file in confif/deploy.
-default_stages = [:dev, :staging, :prod]
+set :default_stage, :dev
+default_stages = [default_stage, :staging, :prod]
 location = fetch(:stage_dir, "config/deploy")
 unless exists?(:stages)
   set :stages, Dir["#{location}/*.rb"].map { |f| File.basename(f, ".rb") }
@@ -50,8 +51,8 @@ namespace :multistage do
   desc "[internal] Ensure that a stage has been selected."
   task :ensure do
     if !exists?(:stage)
-      logger.important "Defaulting to `dev'"
-      find_and_execute_task(:dev)
+      logger.important "Defaulting to `#{default_stage}'"
+      find_and_execute_task(default_stage)
     end
   end
 end
