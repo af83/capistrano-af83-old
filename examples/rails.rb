@@ -11,6 +11,9 @@ set :user,    "please_fill_me"
 set :appname, "please_fill_me"
 
 require "capistrano/af83"
+# You can change the default_stage (:dev by default) with this setting
+# set :default_stage, :staging
+
 load "af83/info"
 # TODO run `cap dev info` and check if variables are OK
 
