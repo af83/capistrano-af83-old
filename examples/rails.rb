@@ -35,6 +35,7 @@ load "af83/thin"
 # load "af83/database"
 # load "af83/resque"
 # load "af83/js_routes"
+# load 'af83/rails_goodies'
 
 # IRC notification
 notification.irc do |irc|
