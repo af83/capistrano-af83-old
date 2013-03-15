@@ -9,7 +9,7 @@ namespace :rails do
   desc "Open a Rails console"
   task :console do
     input = ''
-    run "cd #{current_path} && #{bundle_cmd} exec rails console" do |chan, stream, data|
+    run "cd #{current_path} && #{bundle_cmd} exec rails console", once: true do |chan, stream, data|
       next if data.chomp == input.chomp || data.chomp == ''
       print data
       next unless data.chomp =~ />\s+$/ # Bad prompt detection
