@@ -10,7 +10,8 @@ Gem::Specification.new do |s|
   s.email        = "bruno.michel@af83.com"
   s.homepage     = "https://github.com/af83/capistrano-af83"
   s.summary      = "Capistrano recipes for af83"
-  s.description  = "Capistrano recipes for af83"
+  s.description  = "Capistrano recipes for af83, mongoid, thin, faye and others"
+  s.license      = 'MIT'
 
   s.files        = `git ls-files README.md LICENSE lib`.split("\n")
   s.platform     = Gem::Platform::RUBY
