@@ -29,6 +29,7 @@ load "af83/thin"
 # load "af83/unicorn"
 
 # TODO uncomment the extensions you want to use
+# load "af83/bundler" # check bundler is installed on your server
 # load "af83/custom_maintenance_page"
 # load "af83/es"
 # load "af83/mongoid"
