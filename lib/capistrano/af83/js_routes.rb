@@ -1,4 +1,5 @@
 # Create a JS file with the Rails routes
+load "af83/bower"
 
 namespace :js do
   desc "Create js routes"
@@ -8,7 +9,7 @@ namespace :js do
 
   desc "Download JS/CSS assets using bower"
   task :bower_install do
-    run "cd #{release_path} && bower install"
+    bower.install
   end
 end
 
