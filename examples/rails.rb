@@ -36,7 +36,7 @@ load "af83/thin"
 # load "af83/database"
 # load "af83/resque"
 # load "af83/js_routes"
-# load 'af83/rails_goodies'
+# load 'af83/rails_goodies' # rails:log, rails:console and symlink REVISION to public/revision.html
 
 # IRC notification
 notification.irc do |irc|

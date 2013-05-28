@@ -21,4 +21,11 @@ namespace :rails do
       chan.send_data "#{input}\n"
     end
   end
+
+  desc 'Revision on public'
+  task :revision do
+    run "cd #{current_path} && ln -sf ../REVISION ./public/revision.html"
+  end
 end
+
+after "deploy:restart", "rails:revision"
