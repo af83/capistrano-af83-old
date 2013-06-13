@@ -13,6 +13,7 @@ set :appname, "please_fill_me"
 require "capistrano/af83"
 # You can change the default_stage (:dev by default) with this setting
 # set :default_stage, :staging
+# set :maintenance_content_type, 'application/json' # default html
 
 load "af83/info"
 # TODO run `cap dev info` and check if variables are OK
@@ -30,7 +31,6 @@ load "af83/thin"
 
 # TODO uncomment the extensions you want to use
 # load "af83/bundler" # check bundler is installed on your server
-# load "af83/custom_maintenance_page"
 # load "af83/es"
 # load "af83/mongoid"
 # load "af83/database"
