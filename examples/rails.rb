@@ -13,6 +13,7 @@ set :appname, "please_fill_me"
 require "capistrano/af83"
 # You can change the default_stage (:dev by default) with this setting
 # set :default_stage, :staging
+# set :maintenance_template_path, File.expand_path(File.join('deploy', 'templates'), File.dirname(__FILE__))
 # set :maintenance_content_type, 'application/json' # default html
 
 load "af83/info"
