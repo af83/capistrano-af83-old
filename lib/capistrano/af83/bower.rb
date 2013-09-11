@@ -2,16 +2,16 @@
 namespace :bower  do
   desc "Install JS/CSS assets using bower"
   task :install do
-    run "cd #{release_path} && bower install --production"
+    run "cd #{release_path} && bower --no-color install --production"
   end
 
   desc 'Force install and resolve dependencies'
   task :force_install do
-    run "cd #{release_path} && bower install --production --force-latest"
+    run "cd #{release_path} && bower --no-color install --production --force-latest"
   end
 
   desc 'Cache clean'
   task :cache_clean do
-    run "cd #{release_path} && bower cache clean"
+    run "cd #{release_path} && bower --no-color cache clean"
   end
 end
