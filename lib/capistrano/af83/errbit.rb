@@ -24,4 +24,4 @@ namespace :errbit do
   end
 end
 
-after "deploy", "airbrake:notify"
+after "deploy", "errbit:notify"
