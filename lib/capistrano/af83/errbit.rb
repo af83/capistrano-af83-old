@@ -7,7 +7,7 @@ require 'uri'
 namespace :errbit do
   desc "Notify deploys to errbit"
   task :notify, except: {no_release: true} do
-    api_key = ENV['API_KEY'] || fetch(:api_key)
+    api_key = ENV['API_KEY'] || fetch(:errbit_api_key)
     user = local_user == 'hudson' ? 'Chuck Norris' : local_user
     rails_env = fetch(:rails_env, "production")
     host = fetch(:errbit_host, "errbit.af83.com")
@@ -20,7 +20,7 @@ namespace :errbit do
       'deploy[scm_revision]'   => current_revision
     }
 
-    Net::HTTP.post_form("http://#{host}/deploys.txt", params)
+    Net::HTTP.post_form(URI("http://#{host}/deploys.txt"), params)
   end
 end
 
