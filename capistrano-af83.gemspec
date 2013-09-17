@@ -6,7 +6,7 @@ require 'capistrano/af83/version'
 Gem::Specification.new do |s|
   s.name         = "capistrano-af83"
   s.version      = Capistrano::AF83::VERSION
-  s.authors      = ["Bruno Michel"]
+  s.authors      = ["Bruno Michel", "Laurent Arnoud"]
   s.email        = "bruno.michel@af83.com"
   s.homepage     = "https://github.com/af83/capistrano-af83"
   s.summary      = "Capistrano recipes for af83"
