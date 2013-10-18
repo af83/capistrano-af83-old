@@ -1,7 +1,7 @@
 # This file was taken from https://github.com/TechnoGate/capistrano-exts
 
 # By default, we have 3 stages (dev, staging and production)
-# and we detect other stages if they have a file in confif/deploy.
+# and we detect other stages if they have a file in `config/deploy/*`.
 set :default_stage, :dev
 default_stages = [default_stage, :staging, :prod]
 location = fetch(:stage_dir, "config/deploy")
