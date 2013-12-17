@@ -9,7 +9,7 @@ namespace :deploy do
   end
 
   desc 'Stop thin'
-  task :stop, :rules => :app do
+  task :stop, :roles => :app do
     run "cd #{current_path} && #{bundle_cmd} exec thin stop -C #{shared_path}/thin.yml"
   end
 
