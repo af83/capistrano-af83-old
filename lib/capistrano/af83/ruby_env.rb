@@ -6,7 +6,7 @@ namespace :ruby_env do
     if File.exists? src
       upload src, "ruby-env", via: :scp
     else
-      logger.info "ruby-env for #{rails_env} doesn't exists."
+      logger.info "ruby-env for #{rails_env} doesn't exists, expected path: #{src}."
     end
   end
 end
