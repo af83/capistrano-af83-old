@@ -3,17 +3,19 @@
 # By default, we have 3 stages (dev, staging and production)
 # and we detect other stages if they have a file in `config/deploy/*`.
 set :default_stage, :dev
-default_stages = [default_stage, :staging, :prod]
+default_stages = [default_stage, :staging, :preprod, :prod]
 location = fetch(:stage_dir, "config/deploy")
 unless exists?(:stages)
   set :stages, Dir["#{location}/*.rb"].map { |f| File.basename(f, ".rb") }
 end
 set :stages, stages.map(&:to_sym)
 
+# You can deploy a topic branch on dev with
+# cap dev deploy -s branch=my_topic_branch
 desc "Set the target stage to `dev'."
 task :dev do
   set :stage,     :dev
-  set :branch,    :master
+  set :branch,    exists?(:branch) ? branch : :master
   set :rails_env, :dev
   set(:default_environment) { { "RAILS_ENV" => rails_env } }
   load "#{location}/#{stage}" if File.exists?("#{location}/#{stage}.rb")
@@ -23,11 +25,20 @@ end
 desc "Set the target stage to `staging'."
 task :staging do
   set :stage,     :staging
-  set :branch,    :staging
+  set :branch,    exists?(:branch) ? branch : :staging
   set :rails_env, :staging
   set(:default_environment) { { "RAILS_ENV" => rails_env } }
   load "#{location}/#{stage}" if File.exists?("#{location}/#{stage}.rb")
   server "#{user}@#{application}", :app, :web, :db, :primary => true
+end
+
+desc "Set the target stage to `preprod'."
+task :preprod do
+  set :stage,     :preprod
+  set :branch,    exists?(:branch) ? branch : :preprod
+  set :rails_env, :preprod
+  set(:default_environment) { { "RAILS_ENV" => rails_env } }
+  load "#{location}/#{stage}"
 end
 
 desc "Set the target stage to `prod'."

@@ -31,6 +31,12 @@ cap dev deploy:check
 cap dev deploy
 ```
 
+It's possible to deploy a topic branch with this command:
+
+```sh
+cap dev deploy -s branch=my_topic_branch
+```
+
 
 Capistrano extensions
 ---------------------
@@ -57,6 +63,7 @@ Environments
     | N/A       | test        | master     | localhost/jenkins          |
     | dev       | dev         | master     | dev.{project}.af83.com     |
     | staging   | staging     | staging    | staging.{project}.af83.com |
+    | preprod   | preprod     | preprod    | rc.{project}.com           |
     | prod      | production  | production | {project}.com              |
     +-----------+-------------+------------+----------------------------+
 
